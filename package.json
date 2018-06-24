@@ -1,0 +1,27 @@
+{
+  "name": "Aurora",
+  "version": "0.0.1",
+  "description": "Sandbox for developing planning/dependency tree/graph tool",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rchukh/aurora.git"
+  },
+  "author": "Roman Chukh",
+  "license": "Apache-2.0",
+  "private": true,
+  "homepage": "https://github.com/rchukh/aurora",
+  "dependencies": {
+    "cytoscape": "^3.2.13"
+  },
+  "devDependencies": {
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.0.8",
+    "style-loader": "^0.21.0",
+    "css-loader": "^0.28.11",
+    "local-web-server": "^2.5.2"
+  },
+  "scripts": {
+    "build": "webpack --mode development",
+    "serve": "ws --directory dist"
+  }
+}
