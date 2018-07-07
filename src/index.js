@@ -1,4 +1,4 @@
-import './style.css';
+import './css/style.css';
 import cytoscape from 'cytoscape';
 
 // NOTE: This is a simple graph from Cytoscape documentation, to test-out the packaging
