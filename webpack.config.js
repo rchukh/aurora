@@ -1,15 +1,12 @@
 const path = require('path');
+const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry:  [
-    './src/favicon.ico',
-    './src/index.html',
     './src/index.js'
   ],
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
-  },
   module: {
     rules: [
       {
@@ -34,11 +31,35 @@ module.exports = {
                 outputPath: 'fonts/'
             }
         }]
-      },
-      {
-        test: /\.(html|ico)$/,
-        loader: 'file-loader?name=[name].[ext]'
       }
     ],
+  },
+  plugins: [
+     new CleanWebpackPlugin(['dist']),
+     new webpack.HashedModuleIdsPlugin(),
+     new HtmlWebpackPlugin({
+      title: 'Aurora',
+      template: './src/index.hbs',
+      favicon: './src/favicon.ico'
+    })
+  ],
+  output: {
+    filename: '[name].[chunkhash].js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  optimization: {
+     runtimeChunk: 'single',
+     splitChunks: {
+       cacheGroups: {
+         vendor: {
+           test: /[\\/]node_modules[\\/]/,
+           name: 'vendors',
+           chunks: 'all'
+         }
+       }
+     }
+  },
+  devServer: {
+     contentBase: './dist'
   }
 };

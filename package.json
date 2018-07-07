@@ -12,11 +12,15 @@
   "homepage": "https://github.com/rchukh/aurora",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.1.0",
-    "cytoscape": "^3.2.14"
+    "cytoscape": "^3.2.14",
+    "cytoscape-dagre": "^2.2.1",
+    "cytoscape-grid-guide": "^2.2.0"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.21.0",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8",
@@ -25,6 +29,6 @@
   "scripts": {
     "build": "webpack --mode development",
     "build-prod": "webpack --mode production",
-    "serve": "webpack-dev-server --content-base dist/"
+    "start": "webpack-dev-server --open"
   }
 }
