@@ -14,14 +14,14 @@
     "cytoscape": "^3.2.13"
   },
   "devDependencies": {
+    "css-loader": "^0.28.11",
+    "style-loader": "^0.21.0",
     "webpack": "^4.12.1",
     "webpack-cli": "^3.0.8",
-    "style-loader": "^0.21.0",
-    "css-loader": "^0.28.11",
-    "local-web-server": "^2.5.2"
+    "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
     "build": "webpack --mode development",
-    "serve": "ws --directory dist"
+    "serve": "webpack-dev-server --content-base dist/"
   }
 }
