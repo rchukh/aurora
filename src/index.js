@@ -1,2 +1,2 @@
-import './css/style.css';
+import './css/style.css'
 import cy from './graph.js'

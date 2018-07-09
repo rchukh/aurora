@@ -1,8 +1,8 @@
-import cytoscape from 'cytoscape';
-import dagre     from 'cytoscape-dagre';
+import cytoscape from 'cytoscape'
+import dagre from 'cytoscape-dagre'
 // import AuroraElements from './cytoscape/data/elements.json'
 
-cytoscape.use(dagre);
+cytoscape.use(dagre)
 // NOTE: This is a simple graph from Cytoscape documentation, to test-out the packaging
 var cy = cytoscape({
   // Some randomly picked zoom settings that are working fine for test graph, in a test browser, on a test PC
@@ -30,61 +30,62 @@ var cy = cytoscape({
     // padding: 10
   },
 
-  style: cytoscape.stylesheet()
-     .selector('node')
-       .css({
-         'content': 'data(id)'
-       })
-     .selector('edge')
-       .css({
-         'curve-style': 'bezier',
-         'target-arrow-shape': 'triangle',
-         'width': 4,
-         'line-color': '#ddd',
-         'target-arrow-color': '#ddd'
-       })
-     .selector('.highlighted')
-       .css({
-         'background-color': '#61bffc',
-         'line-color': '#61bffc',
-         'target-arrow-color': '#61bffc',
-         'transition-property': 'background-color, line-color, target-arrow-color',
-         'transition-duration': '0.5s'
-       }),
+  style: cytoscape
+    .stylesheet()
+    .selector('node')
+    .css({
+      content: 'data(id)'
+    })
+    .selector('edge')
+    .css({
+      'curve-style': 'bezier',
+      'target-arrow-shape': 'triangle',
+      width: 4,
+      'line-color': '#ddd',
+      'target-arrow-color': '#ddd'
+    })
+    .selector('.highlighted')
+    .css({
+      'background-color': '#61bffc',
+      'line-color': '#61bffc',
+      'target-arrow-color': '#61bffc',
+      'transition-property': 'background-color, line-color, target-arrow-color',
+      'transition-duration': '0.5s'
+    }),
 
   // Graph Data
   // elements: AuroraElements
   elements: {
-     nodes: [
-       { data: { id: 'a' } },
-       { data: { id: 'b' } },
-       { data: { id: 'c' } },
-       { data: { id: 'd' } },
-       { data: { id: 'e' } }
-     ],
+    nodes: [
+      { data: { id: 'a' } },
+      { data: { id: 'b' } },
+      { data: { id: 'c' } },
+      { data: { id: 'd' } },
+      { data: { id: 'e' } }
+    ],
 
-     edges: [
-       { data: { id: 'a"e', weight: 1, source: 'a', target: 'e' } },
-       { data: { id: 'ab', weight: 3, source: 'a', target: 'b' } },
-       { data: { id: 'be', weight: 4, source: 'b', target: 'e' } },
-       { data: { id: 'bc', weight: 5, source: 'b', target: 'c' } },
-       { data: { id: 'ce', weight: 6, source: 'c', target: 'e' } },
-       { data: { id: 'cd', weight: 2, source: 'c', target: 'd' } }
-     ]
-   },
-});
-
-var bfs = cy.elements().bfs('#b', function(){}, true);
-
-var i = 0;
-var highlightNextEle = function(){
-  if( i < bfs.path.length ){
-    bfs.path[i].addClass('highlighted');
-
-    i++;
-    setTimeout(highlightNextEle, 1000);
+    edges: [
+      { data: { id: 'a"e', weight: 1, source: 'a', target: 'e' } },
+      { data: { id: 'ab', weight: 3, source: 'a', target: 'b' } },
+      { data: { id: 'be', weight: 4, source: 'b', target: 'e' } },
+      { data: { id: 'bc', weight: 5, source: 'b', target: 'c' } },
+      { data: { id: 'ce', weight: 6, source: 'c', target: 'e' } },
+      { data: { id: 'cd', weight: 2, source: 'c', target: 'd' } }
+    ]
   }
-};
+})
+
+var bfs = cy.elements().bfs('#b', function () {}, true)
+
+var i = 0
+var highlightNextEle = function () {
+  if (i < bfs.path.length) {
+    bfs.path[i].addClass('highlighted')
+
+    i++
+    setTimeout(highlightNextEle, 1000)
+  }
+}
 
 // kick off first highlight
-highlightNextEle();
+highlightNextEle()
