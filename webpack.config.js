@@ -40,7 +40,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Aurora',
       template: './src/index.hbs',
-      favicon: './src/favicon.ico'
+      favicon: './src/assets/favicon.ico'
     })
   ],
   output: {
