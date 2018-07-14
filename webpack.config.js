@@ -1,10 +1,10 @@
-const path = require('path');
-const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry:  [
+  entry: [
     './src/index.js'
   ],
   module: {
@@ -25,19 +25,19 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [{
-            loader: 'file-loader',
-            options: {
-                name: '[name].[ext]',
-                outputPath: 'fonts/'
-            }
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
         }]
       }
-    ],
+    ]
   },
   plugins: [
-     new CleanWebpackPlugin(['dist']),
-     new webpack.HashedModuleIdsPlugin(),
-     new HtmlWebpackPlugin({
+    new CleanWebpackPlugin(['dist']),
+    new webpack.HashedModuleIdsPlugin(),
+    new HtmlWebpackPlugin({
       title: 'Aurora',
       template: './src/index.hbs',
       favicon: './src/favicon.ico'
@@ -48,18 +48,18 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   optimization: {
-     runtimeChunk: 'single',
-     splitChunks: {
-       cacheGroups: {
-         vendor: {
-           test: /[\\/]node_modules[\\/]/,
-           name: 'vendors',
-           chunks: 'all'
-         }
-       }
-     }
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
   },
   devServer: {
-     contentBase: './dist'
+    contentBase: './dist'
   }
-};
+}
