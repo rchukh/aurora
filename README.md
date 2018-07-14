@@ -5,11 +5,11 @@
 # Aurora
 
 
-[deps]: https://img.shields.io/david/rchukh/aurora.svg
+[deps]:https://david-dm.org/rchukh/aurora/status.svg
 [deps-url]: https://david-dm.org/rchukh/aurora
 
-[devDeps]: https://img.shields.io/david/dev/rchukh/aurora.svg
+[devDeps]: https://david-dm.org/rchukh/aurora/dev-status.svg
 [devDeps-url]: https://david-dm.org/rchukh/aurora?type=dev
 
-[builds]: https://img.shields.io/travis/rchukh/aurora.svg
+[builds]: https://travis-ci.com/rchukh/aurora.svg?branch=master
 [builds-url]: https://travis-ci.com/rchukh/aurora
