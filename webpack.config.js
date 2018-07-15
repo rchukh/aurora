@@ -2,8 +2,9 @@ const path = require('path')
 const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-module.exports = {
+module.exports = (env, argv) => ({
   entry: [
     './src/index.js'
   ],
@@ -12,7 +13,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          argv.mode !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader'
         ]
       },
@@ -39,8 +40,14 @@ module.exports = {
     new webpack.HashedModuleIdsPlugin(),
     new HtmlWebpackPlugin({
       title: 'Aurora',
-      template: './src/index.hbs',
+      // Causes cosmetic issue: 'Entrypoint undefined = index.html'
+      // Source: https://github.com/jantimon/html-webpack-plugin/issues/900
+      template: './src/index.html',
       favicon: './src/assets/favicon.ico'
+    }),
+    new MiniCssExtractPlugin({
+      filename: argv.mode !== 'production' ? '[name].css' : '[name].[hash].css',
+      chunkFilename: argv.mode !== 'production' ? '[id].css' : '[id].[hash].css'
     })
   ],
   output: {
@@ -62,4 +69,4 @@ module.exports = {
   devServer: {
     contentBase: './dist'
   }
-}
+})
