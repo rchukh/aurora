@@ -10,8 +10,8 @@ export default function aurStyle (cytoscape) {
     .selector('node')
     .css({
       content: 'data(name)',
-      width: 16,
-      height: 16
+      width: 20,
+      height: 20
     })
     .selector('edge')
     .css({
@@ -59,5 +59,10 @@ export default function aurStyle (cytoscape) {
       'line-color': 'red',
       'target-arrow-color': 'red',
       'source-arrow-color': 'red'
+    })
+    .selector('.node-center')
+    .css({
+      'text-halign': 'center',
+      'text-valign': 'center'
     })
 }
