@@ -48,6 +48,10 @@ module.exports = (env, argv) => ({
     new MiniCssExtractPlugin({
       filename: argv.mode !== 'production' ? '[name].css' : '[name].[hash].css',
       chunkFilename: argv.mode !== 'production' ? '[id].css' : '[id].[hash].css'
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
     })
   ],
   output: {
