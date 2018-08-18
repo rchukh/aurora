@@ -946,6 +946,10 @@ cytoscape-grid-guide@^2.2.0:
   dependencies:
     functional-red-black-tree "^1.0.1"
 
+cytoscape-node-resize@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/cytoscape-node-resize/-/cytoscape-node-resize-3.1.2.tgz#e870910e2ceffe947794688c5bcf039363db38bf"
+
 cytoscape@^3.2.16:
   version "3.2.16"
   resolved "https://registry.yarnpkg.com/cytoscape/-/cytoscape-3.2.16.tgz#341027f066d0c63b4eae25e9b87e86b657371323"
@@ -2392,6 +2396,10 @@ kind-of@^5.0.0:
 kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
+
+konva@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/konva/-/konva-2.2.1.tgz#ce9241f4eb418d30c62641e904f767e8c81093e7"
 
 lcid@^1.0.0:
   version "1.0.0"

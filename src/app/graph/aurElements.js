@@ -8,7 +8,7 @@ export default function aurElements () {
   // return AuroraElements
   return {
     nodes: [
-      { data: { id: 'a', name: 'a' } },
+      { data: { id: 'a', name: 'a' }, classes: 'node-center' },
       { data: { id: 'b', name: 'b' } },
       { data: { id: 'c', name: 'c' } },
       { data: { id: 'd', name: 'd' } },

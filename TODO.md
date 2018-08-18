@@ -16,3 +16,4 @@
 - Interactive editing of edge bend points - https://github.com/iVis-at-Bilkent/cytoscape.js-edge-bend-editing
 - Hiding, highlighting and zooming nodes/edges - https://github.com/iVis-at-Bilkent/cytoscape.js-view-utilities
 - Export/Import GraphML format - https://github.com/iVis-at-Bilkent/cytoscape.js-graphml
+- Html labels for nodes - https://github.com/kaluginserg/cytoscape-node-html-label
