@@ -9,7 +9,9 @@ export default function aurStyle (cytoscape) {
     .stylesheet()
     .selector('node')
     .css({
-      content: 'data(name)'
+      content: 'data(name)',
+      width: 16,
+      height: 16
     })
     .selector('edge')
     .css({
