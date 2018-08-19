@@ -8,11 +8,11 @@ export default function aurElements () {
   // return AuroraElements
   return {
     nodes: [
-      { data: { id: 'a', name: 'a' }, classes: 'node-center' },
-      { data: { id: 'b', name: 'b' } },
-      { data: { id: 'c', name: 'c' } },
-      { data: { id: 'd', name: 'd' } },
-      { data: { id: 'e', name: 'e' } }
+      { data: { id: 'a', label: 'a' }, classes: 'node-center' },
+      { data: { id: 'b', label: 'b' } },
+      { data: { id: 'c', label: 'c' } },
+      { data: { id: 'd', label: 'd' } },
+      { data: { id: 'e', label: 'e' } }
     ],
 
     edges: [
@@ -21,7 +21,7 @@ export default function aurElements () {
       { data: { id: 'be', weight: 4, source: 'b', target: 'e' } },
       { data: { id: 'bc', weight: 5, source: 'b', target: 'c' } },
       { data: { id: 'ce', weight: 6, source: 'c', target: 'e' } },
-      { data: { id: 'cd', weight: 2, source: 'c', target: 'd' } }
+      { data: { id: 'cd', weight: 2, source: 'c', target: 'd', label: 'c -> d' } }
     ]
   }
 }

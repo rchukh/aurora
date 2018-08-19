@@ -9,17 +9,19 @@ export default function aurStyle (cytoscape) {
     .stylesheet()
     .selector('node')
     .css({
-      content: 'data(name)',
-      width: 20,
-      height: 20
+      'label': 'data(label)',
+      'width': 20,
+      'height': 20
     })
     .selector('edge')
     .css({
+      'label': 'data(label)',
+      'width': 4,
+      'line-color': '#ddd',
       'curve-style': 'bezier',
       'target-arrow-shape': 'triangle',
-      width: 4,
-      'line-color': '#ddd',
-      'target-arrow-color': '#ddd'
+      'target-arrow-color': '#ddd',
+      'edge-text-rotation': 'autorotate'
     })
     .selector('.highlighted')
     .css({
