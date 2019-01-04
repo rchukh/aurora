@@ -3,9 +3,9 @@ language: node_js
 matrix:
   include:
     - os: linux
-      node_js: '10'
+      node_js: '11'
 before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.9.4
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.12.3
   - export PATH="$HOME/.yarn/bin:$PATH"
 script:
   - 'yarn run build-prod'
