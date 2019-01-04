@@ -1,5 +1,7 @@
 # TODO
 
+Update to Cytoscape.js 3.3. Currently just a version bump dependencies (e.g. node-resize).
+
 ## Checked
 
 - A circular context menu - https://github.com/cytoscape/cytoscape.js-cxtmenu
