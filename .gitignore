@@ -62,3 +62,9 @@ typings/
 
 # Compiled app
 dist/
+
+# Yarn 2 Without Zero Install
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
