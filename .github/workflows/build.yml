@@ -22,4 +22,8 @@ jobs:
         node-version: '12.x'
     - run: curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.22.4
     - run: yarn install
+      env:
+        FORCE_COLOR: 0
     - run: yarn run build-prod
+      env:
+        FORCE_COLOR: 0
