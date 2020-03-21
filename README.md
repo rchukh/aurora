@@ -11,5 +11,5 @@
 [devDeps]: https://david-dm.org/rchukh/aurora/dev-status.svg
 [devDeps-url]: https://david-dm.org/rchukh/aurora?type=dev
 
-[builds]: https://travis-ci.com/rchukh/aurora.svg?branch=master
-[builds-url]: https://travis-ci.com/rchukh/aurora
+[builds]: https://github.com/rchukh/aurora/workflows/Build/badge.svg?branch=master
+[builds-url]: https://github.com/rchukh/aurora/actions?query=workflow%3ABuild+branch%3Amaster
