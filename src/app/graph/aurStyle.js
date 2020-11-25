@@ -9,7 +9,7 @@ export default function aurStyle (cytoscape) {
     .stylesheet()
     .selector('node')
     .css({
-      'label': 'data(label)',
+      'label': node => node.data('label') ? node.data('label') : '',
       'width': 20,
       'height': 20
     })
@@ -33,19 +33,16 @@ export default function aurStyle (cytoscape) {
     })
     .selector('.eh-handle') // EdgeHandles Styles
     .css({
+      'label': '',
       'background-color': 'red',
-      'width': 12,
-      'height': 12,
+      'width': 6,
+      'height': 6,
       'shape': 'ellipse',
       'overlay-opacity': 0,
       'border-width': 12, // makes the handle easier to hit
       'border-opacity': 0
     })
     .selector('.eh-source')
-    .css({
-      'background-color': 'red'
-    })
-    .selector('.eh-handle')
     .css({
       'border-width': 2,
       'border-color': 'red'

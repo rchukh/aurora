@@ -27,7 +27,10 @@ export default function aurContextMenu (cytoscape, graph) {
   // the default values of each option are outlined below:
   let defaults = {
     menuRadius: 50, // the radius of the circular menu in pixels
-    selector: 'node', // elements matching this Cytoscape.js selector will trigger cxtmenus
+    // NOTE: EdgeHandles conflics with context menu
+    // Using just 'node' - context menu when hovered on the ghost red node
+    // would work with ghost red node instead of main node 
+    selector: 'node[label]',
     commands: [ // an array of commands to list in the menu or a function that returns the array
       {
         fillColor: 'rgba(200, 200, 200, 0.75)', // optional: custom background color for item
@@ -99,6 +102,7 @@ export default function aurContextMenu (cytoscape, graph) {
         content: '<i class="fas fa-plus-square"></i>',
         select: function (ele, event) {
           var data = {
+            label: '',
             group: 'nodes'
           }
           var pos = event.position

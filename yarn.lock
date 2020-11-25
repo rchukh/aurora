@@ -706,13 +706,12 @@ __metadata:
     "@fortawesome/fontawesome-free": ^5.15.1
     clean-webpack-plugin: ^3.0.0
     css-loader: ^3.4.2
-    cytoscape: 3.2.22
+    cytoscape: 3.17.0
     cytoscape-autopan-on-drag: 2.2.1
     cytoscape-cxtmenu: ^3.3.0
     cytoscape-dagre: ^2.3.1
     cytoscape-edgehandles: ^3.6.0
     cytoscape-grid-guide: ^2.3.2
-    cytoscape-node-editing: ^4.0.0
     eslint: ^6.8.0
     eslint-config-standard: ^14.1.1
     eslint-plugin-import: ^2.22.1
@@ -1693,24 +1692,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cytoscape-node-editing@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "cytoscape-node-editing@npm:4.0.0"
-  peerDependencies:
-    cytoscape: ^3.2.0
-    jquery: ^1.7.0 || ^2.0.0 || ^3.0.0
-    konva: ^7.0.3
-  checksum: 0dd92e7f58817dc50d81e11484e8a7b4d1b975b138c3a90c9e860bd320884d7729bade8a0ed2905a654912745f692612f1978b87b57b811d12714f389a8f8735
-  languageName: node
-  linkType: hard
-
-"cytoscape@npm:3.2.22":
-  version: 3.2.22
-  resolution: "cytoscape@npm:3.2.22"
+"cytoscape@npm:3.17.0":
+  version: 3.17.0
+  resolution: "cytoscape@npm:3.17.0"
   dependencies:
     heap: ^0.2.6
     lodash.debounce: ^4.0.8
-  checksum: cea1e398a863a617d2054b01cdd332359dfea0379debd0ccaddf77144fe359f92e4fe1e326e60aab7331589b78efa48ff9151b91912213ebe2498f68650e2828
+  checksum: 1ea7b252cc6d91de99d5c2c0ea5610e085691481c31b193d705d131b9f433e5460543f388c4ecc194dd89341298119c5cb2b078f9985d9006431e7cfa6ba0b22
   languageName: node
   linkType: hard
 
