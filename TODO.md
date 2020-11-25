@@ -1,7 +1,5 @@
 # TODO
 
-Update to Cytoscape.js 3.3.
-
 ## Checked
 
 - A circular context menu - https://github.com/cytoscape/cytoscape.js-cxtmenu
