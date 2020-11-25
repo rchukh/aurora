@@ -7,7 +7,6 @@ import aurElements from './graph/aurElements'
 import aurEdgeHandles from './graph/extension/aurEdgeHandles'
 import aurContextMenu from './graph/extension/aurContextMenu'
 import aurAutopanOnDrag from './graph/extension/aurAutopanOnDrag'
-import aurNodeResize from './graph/extension/aurNodeResize'
 
 // NOTE: This is a simple graph from Cytoscape documentation, to test-out the packaging
 var graph = cytoscape({
@@ -31,4 +30,3 @@ var graph = cytoscape({
 aurEdgeHandles(cytoscape, graph)
 aurContextMenu(cytoscape, graph)
 aurAutopanOnDrag(cytoscape, graph)
-aurNodeResize(cytoscape, graph)

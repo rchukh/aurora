@@ -1,8 +1,9 @@
 const path = require('path')
 const webpack = require('webpack')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const PnpWebpackPlugin = require(`pnp-webpack-plugin`)
 
 module.exports = (env, argv) => ({
   entry: [
@@ -32,11 +33,21 @@ module.exports = (env, argv) => ({
             outputPath: 'fonts/'
           }
         }]
+      },
+      {
+        test: /\.(svg|png|jpg|gif)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[hash].[ext]",
+            outputPath: "imgs"
+          }
+        }
       }
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(),
     new webpack.HashedModuleIdsPlugin(),
     new HtmlWebpackPlugin({
       title: 'Aurora',
@@ -72,5 +83,15 @@ module.exports = (env, argv) => ({
   },
   devServer: {
     contentBase: './dist'
+  },
+  resolve: {
+    plugins: [
+      PnpWebpackPlugin,
+    ],
+  },
+  resolveLoader: {
+    plugins: [
+      PnpWebpackPlugin.moduleLoader(module),
+    ],
   }
 })

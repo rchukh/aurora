@@ -33,16 +33,21 @@ export default function aurEdgeHandles (cytoscape, graph) {
       return false
     },
     nodeLoopOffset: -50, // offset for edgeType: 'node' loops
-    nodeParams: function (sourceNode, targetNode) {
+    nodeParams: function( sourceNode, targetNode ){
       // for edges between the specified source and target
       // return element object to be passed to cy.add() for intermediary node
-      return {}
+      return {'data':{'label':''}};
     },
-    edgeParams: function (sourceNode, targetNode, i) {
+    edgeParams: function( sourceNode, targetNode, i ){
       // for edges between the specified source and target
       // return element object to be passed to cy.add() for edge
       // NB: i indicates edge index in case of edgeType: 'node'
-      return {}
+      return {'data':{'label':''}};
+    },
+    ghostEdgeParams: function(){
+      // return element object to be passed to cy.add() for the ghost edge
+      // (default classes are always added for you)
+      return {'data':{'label':''}};
     },
     show: function (sourceNode) {
       // fired when handle is shown
