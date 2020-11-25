@@ -33,6 +33,16 @@ module.exports = (env, argv) => ({
             outputPath: 'fonts/'
           }
         }]
+      },
+      {
+        test: /\.(svg|png|jpg|gif)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[hash].[ext]",
+            outputPath: "imgs"
+          }
+        }
       }
     ]
   },

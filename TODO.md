@@ -1,13 +1,13 @@
 # TODO
 
-Update to Cytoscape.js 3.3. Currently just a version bump dependencies (e.g. node-resize).
+Update to Cytoscape.js 3.3.
 
 ## Checked
 
 - A circular context menu - https://github.com/cytoscape/cytoscape.js-cxtmenu
 - Edge creation UI - https://github.com/cytoscape/cytoscape.js-edgehandles
 - Autopan - https://github.com/iVis-at-Bilkent/cytoscape.js-autopan-on-drag
-- Resize - https://github.com/iVis-at-Bilkent/cytoscape.js-node-resize
+- Resize - https://github.com/iVis-at-Bilkent/cytoscape.js-node-editing/
 
 ## Consider extensions
 
@@ -20,3 +20,4 @@ Update to Cytoscape.js 3.3. Currently just a version bump dependencies (e.g. nod
 - Export/Import GraphML format - https://github.com/iVis-at-Bilkent/cytoscape.js-graphml
 - Html labels for nodes - https://github.com/kaluginserg/cytoscape-node-html-label
 - Div relative to Cytoscape elements - https://github.com/cytoscape/cytoscape.js-popper
+- Compound node drag-and-drop UI for adding and removing children - https://github.com/cytoscape/cytoscape.js-compound-drag-and-drop
