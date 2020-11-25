@@ -18,8 +18,7 @@
     "cytoscape-dagre": "^2.3.1",
     "cytoscape-edgehandles": "^3.6.0",
     "cytoscape-grid-guide": "^2.3.2",
-    "jquery": "^3.3.1",
-    "konva": "^7.0.3"
+    "jquery": "^3.5.1"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
