@@ -3,12 +3,9 @@ const webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const PnpWebpackPlugin = require(`pnp-webpack-plugin`)
 
 module.exports = (env, argv) => ({
-  entry: [
-    './src/index.js'
-  ],
+  mode: 'production',
   module: {
     rules: [
       {
@@ -37,18 +34,19 @@ module.exports = (env, argv) => ({
       {
         test: /\.(svg|png|jpg|gif)$/,
         use: {
-          loader: "file-loader",
+          loader: 'file-loader',
           options: {
-            name: "[name].[hash].[ext]",
-            outputPath: "imgs"
+            name: '[name].[contenthash].[ext]',
+            outputPath: 'imgs'
           }
         }
       }
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(),
-    new webpack.HashedModuleIdsPlugin(),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: [path.join(__dirname, 'dist/**/*')]
+    }),
     new HtmlWebpackPlugin({
       title: 'Aurora',
       // Causes cosmetic issue: 'Entrypoint undefined = index.html'
@@ -57,41 +55,30 @@ module.exports = (env, argv) => ({
       favicon: './src/assets/favicon.ico'
     }),
     new MiniCssExtractPlugin({
-      filename: argv.mode !== 'production' ? '[name].css' : '[name].[hash].css',
-      chunkFilename: argv.mode !== 'production' ? '[id].css' : '[id].[hash].css'
+      filename: argv.mode !== 'production' ? '[name].css' : '[name].[contenthash].css',
+      chunkFilename: argv.mode !== 'production' ? '[id].css' : '[id].[contenthash].css'
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
     })
   ],
+  optimization: {
+    // runtimeChunk: 'single',
+    // splitChunks: {
+    //   cacheGroups: {
+    //     defaultVendors: {
+    //       test: /[\\/]node_modules[\\/]/,
+    //       name: 'vendors',
+    //       chunks: 'all'
+    //     }
+    //   }
+    // }
+  },
   output: {
-    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist')
   },
-  optimization: {
-    runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all'
-        }
-      }
-    }
-  },
   devServer: {
-    contentBase: './dist'
-  },
-  resolve: {
-    plugins: [
-      PnpWebpackPlugin,
-    ],
-  },
-  resolveLoader: {
-    plugins: [
-      PnpWebpackPlugin.moduleLoader(module),
-    ],
+    contentBase: path.join(__dirname, 'dist')
   }
 })
