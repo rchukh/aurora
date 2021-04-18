@@ -25,7 +25,7 @@ export default function aurContextMenu (cytoscape, graph) {
   cytoscape.use(cxtmenu)
 
   // the default values of each option are outlined below:
-  let defaults = {
+  const defaults = {
     menuRadius: 50, // the radius of the circular menu in pixels
     // NOTE: EdgeHandles conflics with context menu
     // Using just 'node' - context menu when hovered on the ghost red node
@@ -52,6 +52,18 @@ export default function aurContextMenu (cytoscape, graph) {
             .data('label', 'node')
         },
         enabled: true
+      },
+      {
+        fillColor: 'rgba(255, 0, 0, 0.75)',
+        content: '<i class="fas fa-trash-alt"></i>',
+        contentStyle: {}, // css key:value pairs to set the command's css in js if you want
+        select: function (ele) {
+          // TODO: Add UI to confirm removal
+          graph
+            .getElementById(ele.id())
+            .remove()
+        },
+        enabled: true
       }
     ],
     fillColor: 'rgba(0, 0, 0, 0.75)', // the background colour of the menu
@@ -68,9 +80,9 @@ export default function aurContextMenu (cytoscape, graph) {
     zIndex: 9999, // the z-index of the ui div
     atMouse: false // draw menu at mouse position
   }
-  let nodeMenu = graph.cxtmenu(defaults)
+  const nodeMenu = graph.cxtmenu(defaults)
 
-  let edgeDefaults = {
+  const edgeDefaults = {
     menuRadius: 40,
     selector: 'edge',
     commands: [
@@ -84,6 +96,17 @@ export default function aurContextMenu (cytoscape, graph) {
             .data('label', 'edge')
         },
         enabled: true
+      },
+      {
+        fillColor: 'rgba(255, 0, 0, 0.75)',
+        content: '<i class="fas fa-trash-alt"></i>',
+        select: function (ele) {
+          // TODO: Add UI to confirm removal
+          graph
+            .getElementById(ele.id())
+            .remove()
+        },
+        enabled: true
       }
     ],
     indicatorSize: 16, // the size in pixels of the pointer to the active command
@@ -91,9 +114,9 @@ export default function aurContextMenu (cytoscape, graph) {
     maxSpotlightRadius: 28, // the maximum radius in pixels of the spotlight
     openMenuEvents: 'cxttapstart taphold' // space-separated cytoscape events that will open the menu; only `cxttapstart` and/or `taphold` work here
   }
-  let edgeMenu = graph.cxtmenu(edgeDefaults)
+  const edgeMenu = graph.cxtmenu(edgeDefaults)
 
-  let canvasDefaults = {
+  const canvasDefaults = {
     menuRadius: 50,
     selector: 'core',
     commands: [
@@ -101,11 +124,11 @@ export default function aurContextMenu (cytoscape, graph) {
         fillColor: 'rgba(100, 100, 100, 0.75)',
         content: '<i class="fas fa-plus-square"></i>',
         select: function (ele, event) {
-          var data = {
+          const data = {
             label: '',
             group: 'nodes'
           }
-          var pos = event.position
+          const pos = event.position
           graph.add({
             data: data,
             position: {
@@ -131,7 +154,7 @@ export default function aurContextMenu (cytoscape, graph) {
     zIndex: 9999, // the z-index of the ui div
     atMouse: false // draw menu at mouse position
   }
-  let canvasMenu = graph.cxtmenu(canvasDefaults)
+  const canvasMenu = graph.cxtmenu(canvasDefaults)
 
   return new AurMenu(
     nodeMenu, edgeMenu, canvasMenu
