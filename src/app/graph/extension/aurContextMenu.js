@@ -1,4 +1,5 @@
 import cxtmenu from 'cytoscape-cxtmenu'
+import { Modal } from 'bootstrap'
 
 /**
  *  @class AurMenu
@@ -29,7 +30,7 @@ export default function aurContextMenu (cytoscape, graph) {
     menuRadius: 50, // the radius of the circular menu in pixels
     // NOTE: EdgeHandles conflics with context menu
     // Using just 'node' - context menu when hovered on the ghost red node
-    // would work with ghost red node instead of main node 
+    // would work with ghost red node instead of main node
     selector: 'node[label]',
     commands: [ // an array of commands to list in the menu or a function that returns the array
       {
@@ -45,11 +46,14 @@ export default function aurContextMenu (cytoscape, graph) {
         content: '<i class="fas fa-edit"></i>',
         contentStyle: {}, // css key:value pairs to set the command's css in js if you want
         select: function (ele) {
-          // TODO: Add UI elements to fill in the label
-          console.log(ele.id())
-          graph
-            .getElementById(ele.id())
-            .data('label', 'node')
+          const modalElement = document.getElementById('exampleModal')
+          modalElement.setAttribute('data-ele-id', ele.id())
+          modalElement.setAttribute(
+            'data-ele-label',
+            graph.getElementById(ele.id()).data('label')
+          )
+          const modal = new Modal(modalElement)
+          modal.show()
         },
         enabled: true
       },
@@ -89,11 +93,14 @@ export default function aurContextMenu (cytoscape, graph) {
       {
         content: '<i class="fas fa-edit"></i>',
         select: function (ele) {
-          // TODO: Add UI elements to fill in the label
-          console.log(ele.id())
-          graph
-            .getElementById(ele.id())
-            .data('label', 'edge')
+          const modalElement = document.getElementById('exampleModal')
+          modalElement.setAttribute('data-ele-id', ele.id())
+          modalElement.setAttribute(
+            'data-ele-label',
+            graph.getElementById(ele.id()).data('label')
+          )
+          const modal = new Modal(modalElement)
+          modal.show()
         },
         enabled: true
       },

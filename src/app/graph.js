@@ -9,7 +9,7 @@ import aurContextMenu from './graph/extension/aurContextMenu'
 import aurAutopanOnDrag from './graph/extension/aurAutopanOnDrag'
 
 // NOTE: This is a simple graph from Cytoscape documentation, to test-out the packaging
-var graph = cytoscape({
+const graph = cytoscape({
   // Some randomly picked zoom settings that are working fine for test graph, in a test browser, on a test PC
   // TODO: Add UI elements for zoom?
   minZoom: 0.25,
@@ -30,3 +30,5 @@ var graph = cytoscape({
 aurEdgeHandles(cytoscape, graph)
 aurContextMenu(cytoscape, graph)
 aurAutopanOnDrag(cytoscape, graph)
+
+export { graph }
