@@ -40,6 +40,22 @@ module.exports = (env, argv) => ({
             outputPath: 'imgs'
           }
         }
+      },
+      {
+        test: /\.(scss)$/,
+        use: [{
+          // inject CSS to page
+          loader: 'style-loader'
+        }, {
+          // translates CSS into CommonJS modules
+          loader: 'css-loader'
+        }, {
+          // Run postcss actions
+          loader: 'postcss-loader'
+        }, {
+          // compiles Sass to CSS
+          loader: 'sass-loader'
+        }]
       }
     ]
   },
