@@ -18,13 +18,13 @@
     "cytoscape-dagre": "^2.3.2",
     "cytoscape-edgehandles": "^3.6.0",
     "cytoscape-grid-guide": "^2.3.2",
-    "jquery": "^3.5.1"
+    "jquery": "^3.6.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.21.0",
-    "@typescript-eslint/parser": "^4.21.0",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
     "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^5.2.1",
+    "css-loader": "^5.2.2",
     "eslint": "^7.24.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
@@ -32,10 +32,10 @@
     "eslint-plugin-promise": "^4.3.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.1",
-    "mini-css-extract-plugin": "^1.4.1",
+    "mini-css-extract-plugin": "^1.5.0",
     "pnp-webpack-plugin": "^1.6.4",
     "style-loader": "^2.0.0",
-    "webpack": "^5.31.2",
+    "webpack": "^5.33.2",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
   },
