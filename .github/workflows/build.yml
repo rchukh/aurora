@@ -17,10 +17,11 @@ jobs:
     #     key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
     #     restore-keys: |
     #       ${{ runner.os }}-yarn-
-    - uses: actions/setup-node@v1
+    - uses: actions/setup-node@v2
       with:
-        node-version: '12.x'
-    - run: curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.22.4
+        node-version: '14'
+    - run: npm install -g yarn
     - run: yarn --version
+    - run: yarn set version 2.4.1
     - run: yarn install
     - run: yarn run build-prod
