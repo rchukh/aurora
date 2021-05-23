@@ -4,7 +4,6 @@
 
 # Aurora
 
-
 [deps]:https://david-dm.org/rchukh/aurora/status.svg
 [deps-url]: https://david-dm.org/rchukh/aurora
 
